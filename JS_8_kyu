@@ -205,3 +205,22 @@ var stringToNumber = function(str){
     // put your code here
   return +str;
 }
+---------------------------------------------------
+----- String repeat -------------------------------
+
+describe("Tests", function() {
+  it ("Basic tests", function() {
+    Test.assertSimilar(repeatStr(3, "*"), "***");
+    Test.assertSimilar(repeatStr(5, "#"), "#####");
+    Test.assertSimilar(repeatStr(2, "ha "), "ha ha ");
+  });
+});
+
+function repeatStr (n, s) {
+  let resultStr = "";
+  
+  for (let i = 1; i <= n; i++ ) {
+    resultStr += s;
+  }
+  return resultStr;
+}
