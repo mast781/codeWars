@@ -153,3 +153,21 @@ describe("squareArea(14.05)", function() {
 function squareArea(A){
   return +Math.pow(((4 * A) / (2 * Math.PI)),2).toFixed(2)
 }
+--------------------------------------------------
+-----------------What's the real floor?-----------
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(getRealFloor(1), 0);
+Test.assertEquals(getRealFloor(5), 4);
+Test.assertEquals(getRealFloor(15), 13);
+  });
+});
+
+function getRealFloor(n) {
+  if (n <= 0) n;
+  if (n > 0 && n <= 12) n -= 1;
+  if (n > 12) n -=2;
+  
+  return n;
+}
