@@ -489,3 +489,17 @@ function numberOfRectangles(m, n) {
   return n*m*(n+1)*(m+1)/4;
   // Your code here!
 }
+-----------------------------------------------------
+------- You Can't Code Under Pressure #1 ------------
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(doubleInteger(2), 4);
+  });
+});
+
+
+function doubleInteger(i) {
+  // i will be an integer. Double it and return it.
+  return i * 2;
+}
