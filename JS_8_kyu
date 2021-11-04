@@ -129,6 +129,10 @@ describe("Tests", () => {
     assert.strictEqual(otherAngle(10, 20), 150);
   });
 });
+------------------------------------------------
+----- Grasshopper - Function syntax debugging----
+
+
 
 
 function otherAngle(a, b) {
@@ -299,4 +303,20 @@ describe('fix add five', () => {
 function addFive(num) {
   var total = num + 5
   return total
+}
+
+----------------------------------------------
+---- Grasshopper - Function syntax debugging---
+
+describe("Tests", () => {
+  it("test", () => {
+Test.expectNoError(main)
+Test.assertEquals(main('take ', 'item'), 'take item')
+Test.assertEquals(main('use ', 'sword'), 'use sword')
+  });
+});
+
+
+function main (verb, noun) {
+  return verb + noun
 }
