@@ -382,3 +382,23 @@ function removeExclamationMarks(s) {
   }
   return strResult
 }
+---------------------------------------------------------------
+---Exclamation marks series #1: Remove an exclamation mark from the end of string------------
+
+describe("Basic Tests", function(){
+  it("It should works for basic tests", function(){
+
+Test.assertSimilar(remove("Hi!") , "Hi")
+Test.assertSimilar(remove("Hi!!!") ,"Hi!!")
+Test.assertSimilar(remove("!Hi") , "!Hi")
+Test.assertSimilar(remove("!Hi!") , "!Hi")
+Test.assertSimilar(remove("Hi! Hi!") , "Hi! Hi")
+Test.assertSimilar(remove("Hi") , "Hi")
+
+})})
+
+
+function remove(s){
+  //coding and coding....
+  return s[s.length - 1] == "!" ? s.slice(0, s.length - 1) : s  
+}
