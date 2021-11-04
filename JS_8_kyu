@@ -265,7 +265,24 @@ describe("Basic tests", () => {
 var a = "code";
 var b = "wa.rs";
 var name = a + b;
+---------------------------------------------------
+--------Grasshopper - Variable Assignment Debug----
 
+describe('variable assignment', () => {
+  it('should set variable a', () => {
+    Test.assertEquals(a, 'dev')
+  })
+  it('should set variable b', () => {
+    Test.assertEquals(b, 'Lab')
+  })
+  it('should set variable name', () => {
+    Test.assertEquals(name, 'devLab')
+  })
+})
 
+var a = "dev"
+var b = "Lab"
+
+var name = a + b
 
 
