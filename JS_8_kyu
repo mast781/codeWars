@@ -593,3 +593,27 @@ Test.assertSimilar(reverseList([1,2,3]), [3,2,1]);
 function reverseList(arr) {
   return arr.reverse();
 }
+--------------------------------------------------
+------ Return String of First Characters ---------
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(makeString("sees eyes xray yoat"), "sexy", "Wrong result for 'sees eyes xray yoat'")
+Test.assertEquals(makeString("brown eyes are nice"), "bean", "Wrong result for 'brown eyes are nice'")
+Test.assertEquals(makeString("cars are very nice"), "cavn", "Wrong result for 'cars are very nice'")
+Test.assertEquals(makeString("kaks de gan has a big head"), "kdghabh", "Wrong result for 'kaks de gan has a big head'")
+
+  });
+});
+
+
+function makeString(s){
+  arrayStr = s.split(" ")
+  strResult = ""
+  
+  for (let i = 0; i < arrayStr.length; i++) {
+     strResult += arrayStr[i].slice(0, 1)
+  }
+  
+  return strResult
+}
