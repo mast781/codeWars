@@ -402,3 +402,27 @@ function remove(s){
   //coding and coding....
   return s[s.length - 1] == "!" ? s.slice(0, s.length - 1) : s  
 }
+------------------------------------------------------------------
+---- Remove all exclamation marks from the end of sentence -------
+
+describe("Basic Tests", function(){
+  it("It should works for basic tests", function(){
+Test.assertSimilar(remove("Hi!") , "Hi")
+Test.assertSimilar(remove("Hi!!!") ,"Hi")
+Test.assertSimilar(remove("!Hi") , "!Hi")
+Test.assertSimilar(remove("!Hi!") , "!Hi")
+Test.assertSimilar(remove("Hi! Hi!") , "Hi! Hi")
+Test.assertSimilar(remove("Hi") , "Hi")
+})})
+
+
+function remove(s){
+  //coding and coding....
+  while (true) {
+    if (s[s.length - 1] == "!") {
+      s = s.slice(0, s.length - 1)
+    } else {
+      return s
+    }
+  }
+}
