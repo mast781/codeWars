@@ -474,3 +474,18 @@ describe("Basic tests", () => {
 function isDivisible(n, x, y) {
   return n % x == 0 && n % y == 0 ? true : false
 }
+---------------------------------------------------
+-- Number of Rectangles in a Grid -----------------
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(numberOfRectangles(4, 4), 100, "");
+Test.assertEquals(numberOfRectangles(5, 5), 225, "");
+  });
+});
+
+
+function numberOfRectangles(m, n) {
+  return n*m*(n+1)*(m+1)/4;
+  // Your code here!
+}
