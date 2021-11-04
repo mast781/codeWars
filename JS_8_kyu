@@ -426,3 +426,31 @@ function remove(s){
     }
   }
 }
+----------------------------------------------------------------------
+----- Move all exclamation marks to the end of the sentence ----------
+
+describe("Basic Tests", function(){
+  it("It should works for basic tests", function(){
+
+Test.assertSimilar(remove("Hi!") , "Hi!")
+Test.assertSimilar(remove("Hi! Hi!") , "Hi Hi!!")
+Test.assertSimilar(remove("Hi! Hi! Hi!") , "Hi Hi Hi!!!")
+Test.assertSimilar(remove("Hi! !Hi Hi!") , "Hi Hi Hi!!!")
+Test.assertSimilar(remove("Hi! Hi!! Hi!") , "Hi Hi Hi!!!!")
+})})
+
+
+function remove(s){
+  //coding and coding....
+  let strResult = ""
+  let strExclamation = ""
+  
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] != "!") { 
+      strResult += s[i]
+    } else {
+      strExclamation += s[i]
+    }
+    }
+  return strResult + strExclamation  
+}
