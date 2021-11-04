@@ -360,3 +360,25 @@ Test.assertEquals(sayHello('Dr. McCoy'), 'Hello, Dr. McCoy')
 function sayHello(name) {
   return 'Hello, ' + name
 }
+-----------------------------------
+--- Remove exclamation marks ------
+
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Tests", () => {
+  it("test", () => {
+    assert.strictEqual(removeExclamationMarks("Hello World!"), "Hello World");
+  });
+});
+
+
+function removeExclamationMarks(s) {
+  let strResult = "";
+  
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] != "!") strResult += s[i]
+  }
+  return strResult
+}
