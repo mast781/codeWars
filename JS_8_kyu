@@ -250,3 +250,22 @@ describe("Basic tests", () => {
   
   return sum;
 }
+-----------------------------------------------
+-------- Basic variable assignment ------------
+
+const { assert } = require("chai")
+
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(name, "codewa.rs");
+    })
+  })
+  
+
+var a = "code";
+var b = "wa.rs";
+var name = a + b;
+
+
+
+
