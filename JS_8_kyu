@@ -579,3 +579,17 @@ describe("reverseList", function(){
 function reverseList(list) {
    return list.reverse()
 }
+---------------------------------------------------
+------ Reverse list -------------------------------
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertSimilar(reverseList([]), []);
+Test.assertSimilar(reverseList([1,2,3]), [3,2,1]);
+  });
+});
+
+
+function reverseList(arr) {
+  return arr.reverse();
+}
