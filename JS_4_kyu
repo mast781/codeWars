@@ -44,3 +44,57 @@ function nextSmaller(n) {
   if (d[0] == 0) return -1
   return parseInt(d.slice(0,i1+1).concat(d.slice(i1+1).sort((a,b) => b-a)).join(''))
 }
+----------------------------------------------------------
+---- Next bigger number with the same digits -------------
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(nextBigger(12),21)
+Test.assertEquals(nextBigger(513),531)
+Test.assertEquals(nextBigger(2017),2071)
+Test.assertEquals(nextBigger(414),441)
+Test.assertEquals(nextBigger(144),414)
+  });
+});
+
+
+function nextBigger(n){
+  var d = n.toString().split('');
+  
+  var p = -1;
+  for (var i = d.length-1; i > 0; i--) {
+    if (+d[i] > +d[i-1]) {
+      p = i-1;
+      break;
+    }
+  }
+  
+
+  if (p == -1) return p;
+    
+  var right = d.splice(p);
+  
+  var pv = right.splice(0, 1)[0];
+  
+  var mm = null, mmi = null;
+  for (var i = 0; i < right.length; i++) {
+    if (right[i] > pv) {
+      if (mm == null || right[i] < mm) {
+        mm = right[i];
+        mmi = i;
+      }
+    }
+  }
+
+  if (mmi == null) return false;
+  
+  right.splice(mmi, 1);
+  right.push(pv);
+  right = right.sort();
+  
+
+  var ret = +d.concat([mm]).concat(right).join('');
+  if (ret < n) return false;
+  
+  return ret;
+}
