@@ -715,3 +715,17 @@ describe("Basic tests", () => {
 function solution(str){
   return str.split("").reverse().join("");
 }
+-----------------------------------------------
+------ Sum The Strings ------------------------
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(sumStr("4","5"), "9");
+Test.assertEquals(sumStr("34","5"), "39");
+  });
+});
+
+
+function sumStr(a,b) {
+  return +a + +b + "" 
+}
