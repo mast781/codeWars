@@ -662,3 +662,17 @@ function passed (list) {
 //Good luck!
 
 } 
+-------------------------------------------------------
+----- Function 3 - multiplying two numbers ------------
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(multiply(2, 3), 6);
+});
+});
+
+
+// Write here your multiply-function
+function multiply (n1, n2) {
+  return n1 * n2
+}
