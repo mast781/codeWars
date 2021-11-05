@@ -729,3 +729,16 @@ Test.assertEquals(sumStr("34","5"), "39");
 function sumStr(a,b) {
   return +a + +b + "" 
 }
+----------------------------------------------
+------- Sum Strings as Numbers ---------------
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(sumStrings('123','456'),'579')
+  });
+});
+
+
+function sumStrings(a,b) {
+   return BigInt(a) + BigInt(b) + ""
+}
