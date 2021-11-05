@@ -676,3 +676,22 @@ Test.assertEquals(multiply(2, 3), 6);
 function multiply (n1, n2) {
   return n1 * n2
 }
+-------------------------------------------------------
+------ Multiply the number----------------------------
+
+describe("Basic Tests",() =>{
+Test.assertEquals(multiply(10),250);
+Test.assertEquals(multiply(5),25);
+Test.assertEquals(multiply(200),25000);
+Test.assertEquals(multiply(0),0);
+Test.assertEquals(multiply(-2),-10);
+})
+
+
+function multiply(number){
+  
+  degree = +(Math.abs(number) + "").length;
+  
+  return number * Math.pow(5, degree) 
+  //your code here
+}
