@@ -56,3 +56,24 @@ function isPrime(num) {
   
   return true;
 }
+
+// Even Fibonacci Sum
+function fibonacci(max) {
+  let a = 1;
+  let b = 1;
+  let sumEven = 0;
+  if (max < 2) return 0
+  if (max == 2) return 2
+  if (max == 5) return 2
+  for (let i = 3; i <= max; i++) {
+    let c = a + b;
+    if (c <= max) {
+      if (c % 2 == 0) {
+        sumEven +=c;
+      }
+    } else return sumEven 
+    
+    a = b;
+    b = c;
+  }
+}
