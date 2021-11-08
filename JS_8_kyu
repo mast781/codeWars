@@ -776,3 +776,33 @@ function multiply(a, b)
 {
   return BigInt(a) * BigInt(b) + ""
 }
+-----------------------------------------
+---- Invert values ---------------------
+
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Invert array values",() => {
+  it("Basic Tests", () => {
+    assert.deepEqual(invert([1,2,3,4,5]), [-1,-2,-3,-4,-5]);
+    assert.deepEqual(invert([1,-2,3,-4,5]), [-1,2,-3,4,-5]);
+    assert.deepEqual(invert([]), []);
+    assert.deepEqual(invert([0]), [-0]);
+  });
+});
+
+
+function invert(array) {
+   
+  let arrayResult = [];
+ 
+  if (array.length == 0) {
+    return array;
+  } else { 
+    for (let i = 0; i < array.length; i++) {
+      arrayResult.push(-array[i]); 
+    }
+  }
+  return arrayResult; 
+}
