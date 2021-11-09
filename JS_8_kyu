@@ -806,3 +806,29 @@ function invert(array) {
   }
   return arrayResult; 
 }
+-------------------------------------
+-- Calculate average ----------------
+
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(find_average([1,1,1]), 1);
+    assert.strictEqual(find_average([1,2,3]), 2);
+    assert.strictEqual(find_average([1,2,3,4]), 2.5);
+  });
+});
+
+
+function find_average(array) {
+  let sum = 0;
+  
+  
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]
+  }
+  
+  return sum == 0 ? 0 : sum / array.length;
+}
