@@ -27,3 +27,33 @@ describe("Basic tests", () => {
 function angle(n) {
     return 180 * (n - 2);
 }
+
+
+// Multiples!
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe('multiples', () => {
+  it('fixed tests', () => {
+    assert.strictEqual(multiple(30), "BangBoom")
+    assert.strictEqual(multiple(3), "Bang")
+    assert.strictEqual(multiple(98),"Miss")
+    assert.strictEqual(multiple(65),"Boom")
+    assert.strictEqual(multiple(23),"Miss")
+    assert.strictEqual(multiple(15),"BangBoom")
+  })
+})
+
+
+function multiple(x) {
+  if (x % 3 == 0 && x % 5 == 0) {
+    return "BangBoom"
+  } else if (x % 3 == 0) {
+    return "Bang"
+  } else if (x % 5 == 0) {
+    return "Boom"
+  } else {
+    return "Miss"
+  }
+}
