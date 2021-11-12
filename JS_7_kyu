@@ -57,3 +57,28 @@ function multiple(x) {
     return "Miss"
   }
 }
+
+// SevenAte9
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(sevenAte9('165561786121789797'),'16556178612178977');
+Test.assertEquals(sevenAte9('797'),'77');
+Test.assertEquals(sevenAte9('7979797'),'7777');
+  });
+});
+
+
+function sevenAte9(str){
+  let arrStr = str.split('');
+  let resultStr="";
+  
+  for(i = 0; i < arrStr.length; i++) {
+    if (arrStr[i] != 9)  {
+        resultStr += arrStr[i]
+    } else if (arrStr[i] == 9 && i < arrStr.length && arrStr[i-1] == 7 && arrStr[i+1] == 7) {
+        
+    }
+  }
+  
+  return resultStr
+}
