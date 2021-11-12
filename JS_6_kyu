@@ -77,3 +77,29 @@ function fibonacci(max) {
     b = c;
   }
 }
+
+// Squares in a Rectangle
+describe('Basic Tests', function(){
+  it("Test 3,2", function(){
+    Test.assertEquals(findSquares(3,2), 8);
+  });
+  it("Test 4,3", function(){
+    Test.assertEquals(findSquares(4,3), 20);
+  });
+  it("Test 11,4", function(){
+    Test.assertEquals(findSquares(11,4), 100);
+  });
+});
+
+
+function findSquares( m,  n)
+{
+        // If n is smaller, swap m and n
+    if (n < m)
+        [m, n] = [n, m];
+
+        // Now n is greater dimension,
+        // apply formula
+    return m * (m + 1) * (2 * m + 1) /
+        6 + (n - m) * m *(m + 1) / 2;
+}
