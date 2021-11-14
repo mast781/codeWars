@@ -139,3 +139,26 @@ const divisions = (n, divisor) => {
         }
     }
 };
+
+// Grains
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Grains", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(square(1), 1);
+    assert.strictEqual(square(3), 4);
+    assert.strictEqual(square(4), 8);
+    assert.strictEqual(square(16), 32768);
+    assert.strictEqual(square(32), 2147483648);
+  })
+})
+
+
+function square(number){
+    let numberGrains = 1
+
+    for (let i = 2; i <= number; i++) numberGrains *= 2
+    return numberGrains
+}
