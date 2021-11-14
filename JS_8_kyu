@@ -996,3 +996,17 @@ describe('Fixed tests', () => {
 function litres(time) {
   return Math.floor(time * 0.5);
 }
+
+// What is between?
+describe("Basic tests", () => {
+  it("between(1, 4)", () => assert.deepStrictEqual(between(1, 4), [1, 2, 3, 4]));
+  it("between(-2, 2)", () => assert.deepStrictEqual(between(-2, 2), [-2, -1, 0, 1, 2]));
+});
+
+
+function between(a, b) {
+  
+  const arr = []
+  for(let i = a; i <= b; i++) arr.push(i);
+  return arr;
+}
