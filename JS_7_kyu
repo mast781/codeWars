@@ -112,3 +112,30 @@ let isSquare = function(n){
   return n < 0 ? false : 
          Math.sqrt(n) - Math.trunc(Math.sqrt(n)) == 0 ? true : false; // fix me
 }
+
+// Number of Divisions
+describe("Your solution", function(){
+  it("should work for example tests", function(){
+    Test.assertEquals(divisions(6, 2), 2);
+    Test.assertEquals(divisions(100, 2), 6);
+    Test.assertEquals(divisions(2450, 5), 4);
+    Test.assertEquals(divisions(9999, 3), 8);
+    Test.assertEquals(divisions(2, 3), 0);
+    Test.assertEquals(divisions(5, 5), 1);
+  });
+});
+
+
+const divisions = (n, divisor) => {
+    let countTimes = 0
+    let num = n;
+    for (let i = 1; i < n; i++) {
+        if (num >= divisor) {
+            num = Math.floor(num / divisor);
+            
+            countTimes++
+        } else {
+            return countTimes
+        }
+    }
+};
