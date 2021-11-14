@@ -1032,3 +1032,19 @@ function pipeFix(numbers){
     for (let i = numbers[0]; i <= numbers[numbers.length - 1]; i++) resultArray.push(i)
     return resultArray
 }
+
+// Drink about
+const { assert } = require("chai")
+
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(peopleWithAgeDrink(22), 'drink whisky');
+    })
+  })
+  
+  
+function peopleWithAgeDrink(old) {
+  return old < 14 ? "drink toddy" :
+         old < 18 ? "drink coke" :
+         old < 21 ? "drink beer" : "drink whisky"  
+};
