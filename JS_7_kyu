@@ -183,3 +183,17 @@ function getCount(str) {
   
   return vowelsCount;
 }
+
+// Convert an array of strings to array of numbers
+describe('Running toNumberArray("1.1","2.2","3.3")...', function() {
+  Test.assertSimilar(toNumberArray(["1.1","2.2","3.3"]), [1.1,2.2,3.3]);
+});
+
+
+function toNumberArray(stringarray){
+  const numberarray = [];
+  stringarray.forEach(function(item, i, stringarray) {
+    numberarray.push(+item)
+  })
+  return numberarray 
+}
