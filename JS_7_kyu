@@ -218,3 +218,19 @@ function getLargerNumbers(a, b) {
   }
   return newArray
 }
+
+// Sum of all the multiples of 3 or 5
+describe("Tests", () => {
+  it("test", () => {
+Test.assertSimilar(findSum(5), 8);
+Test.assertSimilar(findSum(10), 33);
+  });
+});
+
+
+function findSum(n) {
+    let sum = 0
+
+    for(let i = 3; i <= n; i++) if (i % 3 == 0 || i % 5 == 0) sum += i
+    return sum
+}
