@@ -1118,3 +1118,15 @@ function getAverage(marks){
   for(let i = 0; i < marks.length; i++) sum += marks[i]
   return Math.floor (sum / marks.length)
 }
+
+// MakeUpperCase
+describe("Basic Tests", function(){
+  it("should pass the basic tests", function(){
+    Test.assertEquals(makeUpperCase("hello"), "HELLO");
+  });
+});
+
+
+function makeUpperCase(str) {
+  return str.toUpperCase()
+}
