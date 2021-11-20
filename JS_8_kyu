@@ -1204,3 +1204,32 @@ Test.assertEquals(square(3), 9);
 
 
 const square = (arg) => Math.pow(arg, 2)
+
+// Remove First and Last Character Part Two
+const chai = require("chai");
+const assert = chai.assert;
+
+describe("Tests", () => {
+  it("Should remove the first and last character", () => {
+    assert.strictEqual(array('1,2,3'), '2');
+    assert.strictEqual(array('1,2,3,4'), '2 3');
+    assert.strictEqual(array('1,2,3,4,5'), '2 3 4');
+  })
+  it("Should return null if the final result is an empty string", () => {
+    assert.strictEqual(array(''), null);
+    assert.strictEqual(array('1'), null);
+    assert.strictEqual(array('1,2'), null);
+  })
+});
+
+
+const array = (arr) => {
+    let arrResult = arr.split(',')
+    if (arrResult.length > 2) {
+        arrResult.shift()
+        arrResult.pop()
+        return arrResult.join(' ')
+    } else {
+        return null
+    }
+}
