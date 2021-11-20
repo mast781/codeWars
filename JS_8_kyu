@@ -1194,3 +1194,13 @@ describe("Testing function", function() {
 
 
 const greet = () => "hello world!"
+
+// Function 2 - squaring an argument
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(square(3), 9);
+});
+});
+
+
+const square = (arg) => Math.pow(arg, 2)
