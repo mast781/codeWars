@@ -234,3 +234,15 @@ function findSum(n) {
     for(let i = 3; i <= n; i++) if (i % 3 == 0 || i % 5 == 0) sum += i
     return sum
 }
+
+// Sort arrays - 1
+const { assert } = require("chai")
+
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.deepEqual(sortme(['one', 'two', 'three' ]), ["one", "three", "two"])
+   })
+})
+
+
+const sortme = (names) => names.sort()
