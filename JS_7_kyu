@@ -281,3 +281,8 @@ const lastDigit = (n, d) => {
     }
     return arrResult
 }
+
+// Round up to the next multiple of 5
+const roundToNext5 = (n) => {
+    for (; true; n++) if (n % 5 == 0) return n
+}
