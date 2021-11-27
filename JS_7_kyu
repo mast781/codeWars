@@ -345,3 +345,28 @@ function getDivisorsCnt(n) {
     }
     return count
 }
+
+// Get decimal part of the given number
+describe("getDecimal", function() {
+  var assertFuzzyEquals = function(actual, expected, msg){
+    var inrange = Math.abs((actual - expected)) <= 1e-7;
+    Test.expect(inrange,
+      msg || "Expected value near " + expected.toExponential(13) +
+             ", but got " + actual.toExponential(13)
+    );
+  }
+  it("returns decimal part from 10 as 0", function() {
+    assertFuzzyEquals(getDecimal(10), 0);
+  });
+
+  it("returns decimal part from -1.2 as 0.2", function() {
+    assertFuzzyEquals(getDecimal(-1.2), 0.2);
+  });
+
+  it("returns decimal part from 4.5 as 0.5", function() {
+    assertFuzzyEquals(getDecimal(4.5), 0.5);
+  });
+});
+
+
+const getDecimal = (n) => Math.abs(n) - Math.trunc(Math.abs(n)); 
