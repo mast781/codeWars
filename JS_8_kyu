@@ -1233,3 +1233,7 @@ const array = (arr) => {
         return null
     }
 }
+
+// DNA to RNA Conversion
+const DNAtoRNA = (dna) => dna.replace(/[T]/gi, 'U')
+
