@@ -1237,3 +1237,23 @@ const array = (arr) => {
 // DNA to RNA Conversion
 const DNAtoRNA = (dna) => dna.replace(/[T]/gi, 'U')
 
+// Abbreviate a Two Word Name
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(abbrevName("Sam Harris"), "S.H");
+    assert.strictEqual(abbrevName("Patrick Feenan"), "P.F");
+    assert.strictEqual(abbrevName("Evan Cole"), "E.C");
+    assert.strictEqual(abbrevName("P Favuzzi"), "P.F");
+    assert.strictEqual(abbrevName("David Mendieta"), "D.M");
+  });
+});
+
+
+function abbrevName(name){
+  const arr = name.split(" ")
+  return arr[0].slice(0,1).toUpperCase() + "." + arr[1].slice(0,1).toUpperCase()
+}
