@@ -1257,3 +1257,25 @@ function abbrevName(name){
   const arr = name.split(" ")
   return arr[0].slice(0,1).toUpperCase() + "." + arr[1].slice(0,1).toUpperCase()
 }
+
+// Counting sheep...
+describe("Tests", () => {
+  it("test", () => {
+var array1 = [true,  true,  true,  false,
+              true,  true,  true,  true ,
+              true,  false, true,  false,
+              true,  false, false, true ,
+              true,  true,  true,  true ,
+              false, false, true,  true ];
+              
+Test.assertEquals(countSheeps(array1), 17, "There are 17 sheeps in total")
+  });
+});
+
+
+function countSheeps(arrayOfSheep) {
+    const arrResult = arrayOfSheep.filter(function(boolean) {
+        return boolean == true;
+     });
+    return arrResult.length
+} 
