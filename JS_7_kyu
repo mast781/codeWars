@@ -391,3 +391,13 @@ function isPowerOfTwo(n){
     }
 
 }
+
+// Perimeter sequence
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(perimeterSequence(1,3), 12)
+  });
+});
+
+
+const perimeterSequence = (a,n) => a * 4 * n
