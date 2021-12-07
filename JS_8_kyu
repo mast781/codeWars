@@ -1315,3 +1315,18 @@ function arrayPlusArray(arr1, arr2) {
   }
   return sumArr; //something went wrong
 }
+
+// Volume of a Cuboid
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(Kata.getVolumeOfCuboid(1,2,2), 4);
+Test.assertEquals(Kata.getVolumeOfCuboid(6.3,2,5), 63);
+  });
+});
+
+
+class Kata {
+  static getVolumeOfCuboid(length, width, height) {
+    return length * width * height
+  }
+}
