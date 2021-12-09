@@ -1348,3 +1348,17 @@ describe("Tests", function(){
 
 
 const findDifference = (a, b) => Math.abs(a[0] * a[1] * a[2] - b[0] * b[1] * b[2])
+
+// Generate range of integers
+describe("generateRange(2, 10, 2)", function() {
+  Test.assertSimilar(generateRange(2, 10, 2), [2,4,6,8,10]);
+});
+
+
+function generateRange(min, max, step){
+  let arrResult = []
+  for (let i = min; i <= max; i+=step) {
+    arrResult.push(i)
+  }
+  return arrResult
+}
