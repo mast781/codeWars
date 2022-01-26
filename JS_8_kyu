@@ -1411,3 +1411,14 @@ Test.assertEquals(squareSum([]), 0)
 function squareSum(numbers){
   return numbers.reduce((sum, current) => sum + current ** 2, 0);
 }
+
+// Sum Arrays
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(sum([]), 0);
+Test.assertEquals(sum([1, 5.2, 4, 0, -1]), 9.2);
+  });
+});
+
+
+const sum = (numbers) => numbers.length > 0 ? numbers.reduce((a, b) => a + b) : 0 
