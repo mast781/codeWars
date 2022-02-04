@@ -167,3 +167,25 @@ function createPhoneNumber(numbers){
   
   return phoneNumber
 }
+
+// Playing with digits
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(digPow(89, 1), 1)
+Test.assertEquals(digPow(92, 1), -1)
+Test.assertEquals(digPow(46288, 3), 51)
+
+  });
+});
+
+
+function digPow(n, p) {
+    const arr = n.toString().split('')
+    let sumPow = 0
+    for (let i = 0; i < arr.length; i++) {
+        sumPow += Math.pow(+arr[i], i + p)
+    }
+    if (sumPow % n === 0) {
+        return sumPow / n
+    } else return -1
+}
