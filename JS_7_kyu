@@ -452,3 +452,23 @@ describe("Basic tests", () => {
 function digitize(n) {
   n.toString().join('').map(n => +n)
 }
+
+// Hit Count
+describe("Tests", () => {
+  it("test", () => {
+Test.assertSimilar(counterEffect("1250"), [[0,1],[0,1,2],[0,1,2,3,4,5],[0]]);
+Test.assertSimilar(counterEffect("0050"), [[0],[0],[0,1,2,3,4,5],[0]]);
+Test.assertSimilar(counterEffect("0000"), [[0],[0],[0],[0]]);
+  });
+});
+
+
+function counterEffect(hitCount) {
+    return hitCount.split('').map(h => {
+        let newArr = []
+        for (let i = 0; i <= +h; i++) {
+            newArr.push(i)
+        }
+        return newArr
+    })
+}
