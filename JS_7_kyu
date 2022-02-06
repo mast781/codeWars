@@ -496,3 +496,16 @@ describe("Basic tests", () => {
 
 
 const removeDuplicateWords = s => [...new Set(s.split(' '))].join(' ')
+
+// Find the stray number
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(stray([1, 1, 2]), 2);
+  });
+});
+
+
+const stray = (numbers) => {
+  const [a, b] = [...new Set(numbers)];
+  return numbers.indexOf(a) === numbers.lastIndexOf(a) ? a : b;
+};
