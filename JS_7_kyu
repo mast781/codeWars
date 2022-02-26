@@ -545,3 +545,14 @@ function findShort(s){
   arr.map(el => el.length < minLen ? minLen = el.length : el)
   return minLen
 }
+
+// String ends with?
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(solution('abcde', 'cde'), true)
+Test.assertEquals(solution('abcde', 'abc'), false)
+});
+});
+
+
+const  solution = (str, ending)=> str.substr(str.length - ending.length, ending.length) === ending
