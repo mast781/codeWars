@@ -556,3 +556,24 @@ Test.assertEquals(solution('abcde', 'abc'), false)
 
 
 const  solution = (str, ending)=> str.substr(str.length - ending.length, ending.length) === ending
+
+// Sum of digits
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(sum("3433"), "3 + 4 + 3 + 3 = 13");
+Test.assertEquals(sum("64323"), "6 + 4 + 3 + 2 + 3 = 18");
+Test.assertEquals(sum("8"), "8 = 8");
+  });
+});
+
+
+function sum(digits) {
+    if (digits === undefined) {
+        return ''
+    } else {
+        const arrDigits = digits.toString().split('')
+        const sumOfDigits = arrDigits.reduce((sum, current) => sum + Number(current), 0)
+
+        return arrDigits.join(' + ') + ' = ' + sumOfDigits
+    }
+}
