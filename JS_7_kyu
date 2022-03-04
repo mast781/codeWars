@@ -593,3 +593,23 @@ describe("Sample tests", () => {
 function sum() {
   return [...arguments].reduce((sum, current) => sum + current, 0)
 }
+
+// Don't give me five!
+describe("KataTests", function(){
+  it("exampleTests", function(){
+    Test.assertEquals(dontGiveMeFive(1,9), 8);
+    Test.assertEquals(dontGiveMeFive(4,17), 12);
+  });
+});
+
+
+function dontGiveMeFive(start, end)
+{
+    let count = 0
+    for (let i = start; i <= end; i++) {
+        if (!i.toString().includes('5')) {
+            count++
+        }
+    }
+    return count;
+}
