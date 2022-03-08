@@ -118,3 +118,30 @@ const moveZeros = function (arr) {
     }
     return arr;
 }
+
+// Math Issues
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(Math.round(0.4), 0, 'Math.round(0.4)');
+Test.assertEquals(Math.round(0.5), 1, 'Math.round(0.5)');
+
+Test.assertEquals(Math.ceil(0.4), 1, 'Math.ceil(0.4)');
+Test.assertEquals(Math.ceil(0.5), 1, 'Math.ceil(0.5)');
+
+Test.assertEquals(Math.floor(0.4), 0, 'Math.floor(0.4)');
+Test.assertEquals(Math.floor(0.5), 0, 'Math.floor(0.5)');
+  });
+});
+
+
+Math.round = function(number) {
+  return number % 1 < 0.5 ? number - number % 1 : number - number % 1 + 1; // TODO: fix this
+};
+
+Math.ceil = function(number) {
+  return number % 1 > 0 ? number - number % 1 + 1 : number; // TODO: fix this
+};
+
+Math.floor = function(number) {
+  return number - number % 1; // TODO: fix this
+};
