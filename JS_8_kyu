@@ -1519,3 +1519,29 @@ describe("Fixed tests", function() {
 
 
 const isPalindrome = (x) => x.toLowerCase() === x.toLowerCase().split('').reverse().join('')
+
+// Sum of Multiples
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Tests", () => {
+  it("should test", () => {
+    assert.strictEqual(sumMul(0,0),"INVALID");
+    assert.strictEqual(sumMul(2,9),20);
+    assert.strictEqual(sumMul(4,-7),"INVALID");
+  });
+});
+
+
+function sumMul(n,m){
+ if (n < m) {
+   let sum = 0
+   for (let i = n; i < m; i += n) {
+     sum += i
+   }
+   return sum
+ } else {
+   return 'INVALID'
+ }
+}
