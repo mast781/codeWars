@@ -67,7 +67,6 @@ Test.assertEquals(sevenAte9('7979797'),'7777');
   });
 });
 
-
 function sevenAte9(str){
   let arrStr = str.split('');
   let resultStr="";
