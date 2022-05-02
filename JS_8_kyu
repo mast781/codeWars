@@ -1632,3 +1632,19 @@ describe("Basic tests", () => {
 
 
 const stringClean = (s) => s.replace(/[0-9]/g,"")
+
+// Capitalization and Mutability
+describe("Tests", () => {
+  it("test", () => {
+Test.assertSimilar(capitalizeWord('word'), 'Word');
+Test.assertSimilar(capitalizeWord('i'), 'I');
+Test.assertSimilar(capitalizeWord('glasswear'), 'Glasswear');
+  });
+});
+
+
+function capitalizeWord(word) {
+  
+  let newWord = word[0].toUpperCase() + word.slice(1);
+  return newWord;
+}
