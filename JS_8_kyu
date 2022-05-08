@@ -1666,3 +1666,15 @@ describe("Basic tests",() =>{
 function noSpace(x){
   return x.replace(/\s/g,'')
 }
+
+// Name Shuffler
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(nameShuffler('john McClane'),'McClane john');
+  });
+});
+
+
+function nameShuffler(str){
+  return str.split(" ")[1] + " " + str.split(" ")[0]
+}
