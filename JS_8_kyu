@@ -1749,3 +1749,34 @@ describe("Example Tests", () => {
 function binToDec(bin){
   return bin.split('').reverse().reduce((sum, current, index) => sum + Number(current) * Math.pow(2, index), 0)
 }
+
+// Cat years, Dog years
+describe("Example Tests", function() {
+
+  it("one", function() {
+    Test.assertSimilar(humanYearsCatYearsDogYears(1), [1,15,15]);
+  });
+
+  it("two", function() {
+    Test.assertSimilar(humanYearsCatYearsDogYears(2), [2,24,24]);
+  });
+
+  it("ten", function() {
+    Test.assertSimilar(humanYearsCatYearsDogYears(10), [10,56,64]);
+  });
+  
+  
+  var humanYearsCatYearsDogYears = function(humanYears) {
+  let catYears, dogYears
+  if (humanYears === 1) {
+    catYears = 15
+    dogYears =15
+  } else if (humanYears === 2) {
+    catYears = 24
+    dogYears = 24
+  } else {
+    catYears = (humanYears - 2 ) * 4 + 24
+    dogYears = (humanYears - 2 ) * 5 + 24
+  }
+  return [humanYears,catYears,dogYears];
+}
