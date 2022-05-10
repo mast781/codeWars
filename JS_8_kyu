@@ -1693,3 +1693,18 @@ Test.assertEquals(plural(Infinity), true, "Plural for Infinity");
 
 
 const plural = (n) => n !== 1
+
+// Holiday VI - Shark Pontoon
+describe("Example tests",() =>{
+Test.assertEquals(shark(12, 50, 4, 8, true), "Alive!");
+Test.assertEquals(shark(7, 55, 4, 16, true), "Alive!");
+Test.assertEquals(shark(24, 0, 4, 8, true), "Shark Bait!");
+});
+
+
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+  if (dolphin) {
+   sharkSpeed /= 2 
+  }
+  return pontoonDistance/youSpeed < sharkDistance/sharkSpeed ? "Alive!" : "Shark Bait!"
+}
