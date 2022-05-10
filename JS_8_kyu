@@ -1739,3 +1739,13 @@ describe("Example Tests", function() {
 function betterThanAverage(classPoints, yourPoints) {
   return (classPoints.reduce((a,b) => a + b, 0) + yourPoints)/(classPoints.length + 1) < yourPoints 
 }
+
+// Bin to Decimal
+describe("Example Tests", () => {
+  [ ["1",1], ["0",0], ["1001001", 73] ].forEach( ([inp, exp]) => Test.assertEquals( binToDec(inp), exp ) )
+});
+
+
+function binToDec(bin){
+  return bin.split('').reverse().reduce((sum, current, index) => sum + Number(current) * Math.pow(2, index), 0)
+}
