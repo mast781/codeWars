@@ -1877,3 +1877,21 @@ function countPositivesSumNegatives(input) {
    
   return count === 0 && sum === 0 ? [] : [count, sum]
 }
+
+// Find Multiples of a Number
+describe("Basic Tests",() =>{
+Test.assertSimilar(findMultiples(5, 25), [5, 10, 15, 20, 25])
+Test.assertSimilar(findMultiples(1, 2), [1, 2])
+Test.assertSimilar(findMultiples(5, 7), [5])
+Test.assertSimilar(findMultiples(4, 27), [4, 8, 12, 16, 20, 24])
+Test.assertSimilar(findMultiples(11, 54), [11, 22, 33, 44])
+});
+
+
+function findMultiples(integer, limit) {
+  let arr = [];
+  for (let i = integer; i <= limit; i += integer) {
+    arr.push(i)
+  }
+  return arr
+}
