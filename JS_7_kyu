@@ -650,3 +650,17 @@ describe("Basic tests", () => {
 function solution(nums){
   return nums === null ? [] : nums.sort((a, b) => a - b);
 }
+
+// Jaden Casing Strings
+describe("Tests", () => {
+  it("test", () => {
+var str = "How can mirrors be real if our eyes aren't real";
+Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real");
+
+  });
+});
+
+
+String.prototype.toJadenCase = function () {
+  return this.split(' ').map(st => st[0].toUpperCase() + st.slice(1)).join(' ')
+};
