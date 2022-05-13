@@ -713,3 +713,17 @@ describe("maskify", function(){
 
 
 const maskify = (cc) => cc.length < 5 ? cc : '#'.repeat(cc.length - 4) + cc.slice(-4)
+
+// Binary Addition
+describe("addBinary(1,2)", function() {
+  var results1 = addBinary(1,2);
+  it("Should return something that isn't falsy", function() {
+    Test.expect(results1, "Something is wrong, no results!");
+  });
+  it("Should return \"11\"", function() {
+    Test.assertEquals(results1, "11");
+  });
+});
+
+
+const addBinary = (a,b) => (a + b).toString(2)
