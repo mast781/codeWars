@@ -701,3 +701,15 @@ Test.assertEquals(isNarcissistic(4679307774), true);
 
 
 const isNarcissistic = (n) => n.toString().split('').reduce((res, current, index, arr) => res + Math.pow(Number(current), arr.length), 0) === n
+
+// Credit Card Mask
+describe("maskify", function(){
+  it("should work for some examples", function(){
+    Test.assertEquals(maskify('4556364607935616'), '############5616');
+    Test.assertEquals(maskify('1'), '1');
+    Test.assertEquals(maskify('11111'), '#1111');
+  });
+});
+
+
+const maskify = (cc) => cc.length < 5 ? cc : '#'.repeat(cc.length - 4) + cc.slice(-4)
