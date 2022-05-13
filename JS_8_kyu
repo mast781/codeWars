@@ -1974,3 +1974,13 @@ describe("Basic tests",() =>{
 
 
 const grow = (x) => x.reduce((result, current) => result * current, 1)
+
+// Dollars and Cents
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(formatMoney(39.99), '$39.99', 'That\'s not formatted the way we expected.');
+  });
+});
+
+
+const formatMoney = (amount) => "$" + amount.toFixed(2)
