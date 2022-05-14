@@ -2000,3 +2000,25 @@ describe("Basic tests",() =>{
 
 
 const sumMix = (x) => x.reduce((sum, current) => sum + Number(current),0)
+
+// Find the first non-consecutive number
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Fixed tests", () => {
+  it('a simple example', function() {
+    const first = firstNonConsecutive([1,2,3,4,6,7,8])
+    assert.strictEqual(first, 6)
+  })
+})
+
+
+function firstNonConsecutive (arr) {
+  for (let i = 1; i < arr.length; i++){
+    if  (arr[i] - arr[i-1] !== 1) {
+      return arr[i]
+    }
+  } 
+  return null
+}
