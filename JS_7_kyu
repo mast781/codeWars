@@ -768,3 +768,21 @@ function sumTwoSmallestNumbers(numbers) {
   let arr = [...numbers].sort((a,b) => a - b)
   return arr[0] + arr[1]
 }
+
+// Initialize my name
+describe('Static tests', function(){
+  it('Initialize Names', function(){
+    Test.assertEquals(initializeNames('Jack Ryan'), 'Jack Ryan','');
+    Test.assertEquals(initializeNames('Lois Mary Lane'), 'Lois M. Lane','');
+    Test.assertEquals(initializeNames('Dimitri'), 'Dimitri','');
+    Test.assertEquals(initializeNames('Alice Betty Catherine Davis'), 'Alice B. C. Davis','');
+  });
+})
+
+
+const initializeNames = (name) => name.split(' ').length < 3
+    ? name
+    : name.split(' ').map((el, index) => index > 0 && index < name.split(' ').length - 1
+        ? el.slice(0, 1) + "."
+        : el
+    ).join(' ')
