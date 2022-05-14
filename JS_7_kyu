@@ -805,3 +805,19 @@ function allNonConsecutive (arr) {
     }
     return resArr
 }
+
+// Binary to string
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(binaryToString('0b10000110b11000010b1110100'), 'Cat')
+Test.assertEquals(binaryToString('0b10010000b11001010b11011000b11011000b11011110b1000000b10101110b11011110b11100100b11011000b11001000b100001'
+), 'Hello World!')
+Test.assertEquals(binaryToString('0b10100110b11001010b11000110b11100100b11001010b11101000b1000000b11011010b11001010b11100110b11100110b11000010b11001110b11001010b1000000b110001'
+), 'Secret message 1')
+  });
+});
+
+
+function binaryToString(binary){
+    return binary.slice(2).split('0b').map(el => String.fromCharCode(parseInt(el, 2))).join('')
+}
