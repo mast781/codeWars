@@ -786,3 +786,22 @@ const initializeNames = (name) => name.split(' ').length < 3
         ? el.slice(0, 1) + "."
         : el
     ).join(' ')
+
+// Find all non-consecutive numbers
+describe('a simple example', function() {
+  const results = allNonConsecutive([1,2,3,4,6,7,8,10])
+  Test.assertSimilar(results, [{i: 4, n:6}, {i: 7, n:10}])
+})
+
+
+function allNonConsecutive (arr) {
+    const resArr = []
+    if (arr.length > 1) {
+        for (let i = 1; i < arr.length; i++){
+            if  (arr[i] - arr[i-1] !== 1) {
+                resArr.push({i: i, n: arr[i]})
+            }
+        }
+    }
+    return resArr
+}
