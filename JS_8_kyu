@@ -2080,3 +2080,27 @@ Test.assertEquals(getChar(65),'A')
 function getChar(c){
   return String.fromCharCode(c)
 }
+
+// ASCII Total
+const strictEqual = require('chai').assert.strictEqual;
+
+function doTest (string, expected) {
+  const actual = uniTotal(string);
+  strictEqual(actual, expected, `for string "${string}":\n`);
+}
+
+it("sample tests", () => {
+  doTest("", 0);
+  doTest("a", 97);
+  doTest("b", 98);
+  doTest("c", 99);
+  doTest("d", 100);
+  doTest("e", 101);
+  doTest("aaa", 291);
+  doTest("Mary Had A Little Lamb", 1873);
+});
+
+
+function uniTotal (string) {
+   return string.split('').reduce((sum, current) => sum + current.charCodeAt(),0)
+}
