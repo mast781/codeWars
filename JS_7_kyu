@@ -812,7 +812,8 @@ describe("Tests", () => {
 Test.assertEquals(binaryToString('0b10000110b11000010b1110100'), 'Cat')
 Test.assertEquals(binaryToString('0b10010000b11001010b11011000b11011000b11011110b1000000b10101110b11011110b11100100b11011000b11001000b100001'
 ), 'Hello World!')
-Test.assertEquals(binaryToString('0b10100110b11001010b11000110b11100100b11001010b11101000b1000000b11011010b11001010b11100110b11100110b11000010b11001110b11001010b1000000b110001'
+Test.assertEquals(binaryToString('
+0b10100110b11001010b11000110b11100100b11001010b11101000b1000000b11011010b11001010b11100110b11100110b11000010b11001110b11001010b1000000b110001'
 ), 'Secret message 1')
   });
 });
@@ -820,4 +821,28 @@ Test.assertEquals(binaryToString('0b10100110b11001010b11000110b11100100b11001010
 
 function binaryToString(binary){
     return binary.slice(2).split('0b').map(el => String.fromCharCode(parseInt(el, 2))).join('')
+}
+
+// Password Check - Binary to String
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold = 0;
+
+describe("Fixed Tests", () => {
+  it("Tests", () => {
+    assert.strictEqual(decodePass(['password123', 'admin', 'admin1'], '01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'), 'password123');
+    assert.strictEqual(decodePass(['password321', 'admin', 'admin1'], '01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'), false);
+    assert.strictEqual(decodePass(['password456', 'pass1', 'test12'], '01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'), false);
+  })
+})
+
+
+function decodePass( passArr, bin ){
+    let pass = bin.split(' ').map(el => String.fromCharCode(parseInt(el, 2))).join('')
+    for (let i = 0; i < passArr.length; i++) {
+        if (passArr[i] === pass) {
+            return pass
+        }
+    }
+    return false
 }
