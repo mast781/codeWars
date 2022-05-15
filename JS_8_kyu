@@ -2038,3 +2038,23 @@ describe("Basic tests",() =>{
 
 
 const fakeBin = (x) => x.split('').map(el => el < 5 ? 0 : 1).join('')
+
+// Add new item (collections are passed by reference)
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(addExtra([1,2,3]).length, 4)
+Test.assertEquals(addExtra([1,2]).length, 3)
+Test.assertEquals(addExtra([]).length, 1)
+
+var arr = [1,2,3];
+Test.assertNotEquals(addExtra(arr),arr, "Description: ...You have to create a new list..." )
+
+  });
+});
+
+
+function addExtra( listOfNumbers ){
+    let newArr = [...listOfNumbers]
+    newArr.push(13)
+    return newArr
+}
