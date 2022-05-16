@@ -830,9 +830,12 @@ chai.config.truncateThreshold = 0;
 
 describe("Fixed Tests", () => {
   it("Tests", () => {
-    assert.strictEqual(decodePass(['password123', 'admin', 'admin1'], '01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'), 'password123');
-    assert.strictEqual(decodePass(['password321', 'admin', 'admin1'], '01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'), false);
-    assert.strictEqual(decodePass(['password456', 'pass1', 'test12'], '01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'), false);
+    assert.strictEqual(decodePass(['password123', 'admin', 'admin1'], 
+    '01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'), 'password123');
+    assert.strictEqual(decodePass(['password321', 'admin', 'admin1'], 
+    '01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'), false);
+    assert.strictEqual(decodePass(['password456', 'pass1', 'test12'], 
+    '01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'), false);
   })
 })
 
@@ -887,4 +890,46 @@ function removeSmallest(numbers) {
     }
     newArr.splice(minIndex, 1)
     return newArr
+}
+
+// Odd or Even?
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe('Fixed tests', () => {
+  it('Edge tests', () => {
+    assert.strictEqual(oddOrEven([0]), 'even')
+    assert.strictEqual(oddOrEven([1]), 'odd')
+    assert.strictEqual(oddOrEven([]), 'even')
+  });
+  
+  it('Even tests', () => {
+    assert.strictEqual(oddOrEven([0, 1, 5]), 'even')
+    assert.strictEqual(oddOrEven([0, 1, 3]), 'even')
+    assert.strictEqual(oddOrEven([1023, 1, 2]), 'even')
+  });
+  
+  it('Negative Even tests', () => {
+    assert.strictEqual(oddOrEven([0, -1, -5]), 'even')
+    assert.strictEqual(oddOrEven([0, -1, -3]), 'even')
+    assert.strictEqual(oddOrEven([-1023, 1, -2]), 'even')
+  });
+  
+  it('Odd tests', () => {
+    assert.strictEqual(oddOrEven([0, 1, 2]), 'odd')
+    assert.strictEqual(oddOrEven([0, 1, 4]), 'odd')
+    assert.strictEqual(oddOrEven([1023, 1, 3]), 'odd')
+  });
+  
+  it('Negative Odd tests', () => {
+    assert.strictEqual(oddOrEven([0, -1, 2]), 'odd')
+    assert.strictEqual(oddOrEven([0, 1, -4]), 'odd')
+    assert.strictEqual(oddOrEven([-1023, -1, 3]), 'odd')
+  });
+});
+
+
+function oddOrEven(array) {
+   return array.length === 0 || array.reduce((a,b) => a + b) % 2 === 0 ? "even" : "odd"
 }
