@@ -2174,3 +2174,15 @@ function rentalCarCost(d) {
         : d >= 3 && d < 7 ? d * 40 - 20
         : d * 40 - 50
 }
+
+// Remove duplicates from list
+describe("Tests", () => {
+  it("test", () => {
+Test.assertSimilar(distinct([1]), [1]);
+Test.assertSimilar(distinct([1,2]), [1,2]);
+Test.assertSimilar(distinct([1,1,2]), [1,2]);
+  });
+});
+
+
+const distinct = (a) => Array.from(new Set(a))
