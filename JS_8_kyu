@@ -2242,3 +2242,19 @@ describe("Basic tests", function() {
 function getNumberFromString(s) {
     return Number(s.replace(/[^\d]/g, ''))
 }
+
+// Training JS #16: Methods of String object--slice(), substring() and substr()
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(cutIt(["ab","cde","fgh"]) , ["ab","cd","fg"]);
+    Test.assertSimilar(cutIt(["abc","defgh","ijklmn"]) , ["abc","def","ijk"]);
+    Test.assertSimilar(cutIt(["codewars","javascript","java"]) , ["code","java","java"]);
+
+  });
+});
+
+
+function cutIt(arr){
+  const min = Math.min(...arr.map(el => el.length))
+  return arr.map(el => el.slice(0, min))
+}
