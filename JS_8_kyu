@@ -2258,3 +2258,14 @@ function cutIt(arr){
   const min = Math.min(...arr.map(el => el.length))
   return arr.map(el => el.slice(0, min))
 }
+
+// Add Length
+describe("Tests", () => {
+  it("test", () => {
+Test.assertSimilar(addLength('apple ban'),["apple 5", "ban 3"]);
+Test.assertSimilar(addLength('you will win'),["you 3", "will 4", "win 3"]);
+  });
+});
+
+
+const addLength = (str) => str.split(' ').map(s => s + " " + s.length)
