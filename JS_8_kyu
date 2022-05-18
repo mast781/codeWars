@@ -2488,3 +2488,21 @@ describe("Palindrome", function() {
 function isPalindrome(line) {
     return line.toString().localeCompare(line.toString().split('').reverse().join('')) === 0 ? true : false
 }
+
+// Return the day
+describe( "whatday", function(){
+  it( "should work for the examples" , function(){
+    Test.assertEquals(whatday(1),'Sunday')
+    Test.assertEquals(whatday(2), 'Monday')
+    Test.assertEquals(whatday(3),'Tuesday')
+       Test.assertEquals(whatday(8),  'Wrong, please enter a number between 1 and 7')
+    Test.assertEquals(whatday(20),  'Wrong, please enter a number between 1 and 7')
+
+      });
+});
+
+
+function whatday(num) { 
+  const day = {1: "Sunday", 2: "Monday", 3: "Tuesday", 4: "Wednesday", 5: "Thursday", 6: "Friday", 7: "Saturday"}
+  return (num < 1 || num > 7) ? "Wrong, please enter a number between 1 and 7" : day[num]
+}
