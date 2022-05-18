@@ -2385,3 +2385,23 @@ Test.assertEquals(shortenToDate("Monday December 25, 10pm"), "Monday December 25
 
 
 const shortenToDate = (longDate) => longDate.split(',')[0]
+
+// Tip Calculator
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(calculateTip(20, "Excellent"), 4);
+Test.assertEquals(calculateTip(26.95, "good"), 3);
+
+  });
+});
+
+
+function calculateTip(amount, rating) {
+  const rates = {"terrible": 0, "poor": 5, "good": 10, "great": 15, "excellent": 20}
+  
+  if (Object.keys(rates).indexOf(rating.toLowerCase()) === -1) {
+    return "Rating not recognised"
+  } else {
+    return Math.ceil(amount * rates[rating.toLowerCase()] / 100)    
+  }
+}
