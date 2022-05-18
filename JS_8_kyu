@@ -2543,3 +2543,17 @@ function howManydays(month){
   }
   return days;
 }
+
+// Training JS #1: create your first JS function and print "Hello World!"
+describe("Tests", () => {
+  it("test", () => {
+Test.expect(helloWorld, "function helloWorld is not defined")
+helloWorld();
+  });
+});
+
+
+function helloWorld() {
+  var str = "Hello World!"
+  console.log(str)
+} 
