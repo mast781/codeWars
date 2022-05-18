@@ -2421,3 +2421,13 @@ function drawStairs(n) {
     }
     return resStr + " ".repeat(n-1) + "I"
 }
+
+// 5 without numbers !!
+describe("unusualFive", function(){
+  it("should return 5", function(){
+    assert.strictEqual(unusualFive(), 5);
+  });
+});
+
+
+const unusualFive = () => "     ".length
