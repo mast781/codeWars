@@ -2666,3 +2666,20 @@ function trueOrFalse(val){
   if (val)    return "true";             
   else     return "false";
 }
+
+// Training JS #7: if..else and ternary operator
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(saleHotdogs(1),100);
+    Test.assertSimilar(saleHotdogs(4),400);
+    Test.assertSimilar(saleHotdogs(5),475);
+    Test.assertSimilar(saleHotdogs(9),855);
+    Test.assertSimilar(saleHotdogs(10),900);
+    Test.assertSimilar(saleHotdogs(100),9000);
+  });
+});
+
+
+function saleHotdogs(n){
+  return n < 5 ? n * 100 : (n >= 5 && n < 10) ? n * 95 : n * 90
+}
