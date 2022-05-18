@@ -2456,3 +2456,35 @@ describe("Your refactored solution", () => {
 
 
 const describeAge=(age)=>age<=12?"You're a(n) kid":(age>=13&&age<=17)?"You're a(n) teenager":(age>=18&&age<=64)?"You're a(n) adult":"You're a(n) elderly"
+
+// Palindrome Strings
+describe("Palindrome", function() {
+    it("should identifies that a string is palindrome", function() {
+        Test.assertEquals(isPalindrome("anna"), true);
+    });
+    
+    it("should identifies that a string is not palindrome", function() {
+        Test.assertEquals(isPalindrome("walter"), false);
+    });
+    
+    it("should identifies that a number is palindrome", function() {
+        Test.assertEquals(isPalindrome(12321), true);
+    });
+    
+    it("should identifies that a number is not palindrome", function() {
+        Test.assertEquals(isPalindrome(123456), false);
+    });
+    
+    it("should identifies that a string is palindrome on punctuation", function() {
+        Test.assertEquals(isPalindrome("."), true);
+    });
+    
+    it("should identifies that a string is palindrome on punctuation", function() {
+        Test.assertEquals(isPalindrome(".!!."), true);
+    });
+});
+
+
+function isPalindrome(line) {
+    return line.toString().localeCompare(line.toString().split('').reverse().join('')) === 0 ? true : false
+}
