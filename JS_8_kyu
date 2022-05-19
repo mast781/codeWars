@@ -2683,3 +2683,28 @@ describe("Tests", () => {
 function saleHotdogs(n){
   return n < 5 ? n * 100 : (n >= 5 && n < 10) ? n * 95 : n * 90
 }
+
+// Training JS #9: loop statement --while and do..while
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(padIt("a",1),"*a");
+    Test.assertSimilar(padIt("a",2),"*a*");
+    Test.assertSimilar(padIt("a",3),"**a*");
+    Test.assertSimilar(padIt("a",4),"**a**");
+    Test.assertSimilar(padIt("a",5),"***a**");
+  });
+});
+
+
+function padIt(str,n){
+  let resStr = str, count =1   
+  do{
+    if (count % 2 === 0) {
+      resStr += "*" 
+    } else {
+      resStr = "*" + resStr
+    }
+    count++;
+  } while (count<=n)
+  return resStr;
+}
