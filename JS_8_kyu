@@ -2821,3 +2821,19 @@ describe("Tests", () => {
 });
 
 const howManySmaller = (arr,n) => arr.filter (el => el.toFixed(2) < n).length
+
+// Training JS #18: Methods of String object--concat() split() and its good friend join()
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(splitAndMerge("My name is John"," ") , "M y n a m e i s J o h n");
+    Test.assertSimilar(splitAndMerge("My name is John","-") , "M-y n-a-m-e i-s J-o-h-n");
+    Test.assertSimilar(splitAndMerge("Hello World!",".") , "H.e.l.l.o W.o.r.l.d.!");
+    Test.assertSimilar(splitAndMerge("Hello World!",",") , "H,e,l,l,o W,o,r,l,d,!");
+
+  });
+});
+
+
+function splitAndMerge(string, separator) {
+  return string.split(" ").map(el => el.split('').join(separator)).join(" ")
+}
