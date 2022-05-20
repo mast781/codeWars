@@ -2837,3 +2837,19 @@ describe("Tests", () => {
 function splitAndMerge(string, separator) {
   return string.split(" ").map(el => el.split('').join(separator)).join(" ")
 }
+
+// Training JS #19: Methods of String object--toUpperCase() toLowerCase() and replace()
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(alienLanguage("My name is John") , "My NAMe Is JOHn");
+    Test.assertSimilar(alienLanguage("this is an example") , "THIs Is An EXAMPLe");
+    Test.assertSimilar(alienLanguage("Hello World") , "HELLo WORLd");
+    Test.assertSimilar(alienLanguage("HELLO WORLD") , "HELLo WORLd");
+
+  });
+});
+
+
+function alienLanguage(str){
+  return str.toLowerCase().split(" ").map(el => el.slice(0, el.length-1).toUpperCase() + el[el.length-1]).join(" ") 
+}
