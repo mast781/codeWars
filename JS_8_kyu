@@ -2853,3 +2853,22 @@ describe("Tests", () => {
 function alienLanguage(str){
   return str.toLowerCase().split(" ").map(el => el.slice(0, el.length-1).toUpperCase() + el[el.length-1]).join(" ") 
 }
+
+// Training JS #21: Methods of String object--trim() and the string template
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(fiveLine("  a") , "a\naa\naaa\naaaa\naaaaa");
+    Test.assertSimilar(fiveLine("\txy \n") , "xy\nxyxy\nxyxyxy\nxyxyxyxy\nxyxyxyxyxy");
+    Test.assertSimilar(fiveLine("           Ok               ") , "Ok\nOkOk\nOkOkOk\nOkOkOkOk\nOkOkOkOkOk");
+
+  });
+});
+
+
+function fiveLine(s){
+  resStr = s.trim()
+  for (let i = 2; i < 6; i++) {
+    resStr += "\n" + (s.trim().repeat(i))
+  }
+  return resStr
+}
