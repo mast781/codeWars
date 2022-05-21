@@ -933,3 +933,23 @@ describe('Fixed tests', () => {
 function oddOrEven(array) {
    return array.length === 0 || array.reduce((a,b) => a + b) % 2 === 0 ? "even" : "odd"
 }
+
+// Training JS #22: Unlock new skills--Arrow function,spread operator and deconstruction
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(shuffleIt([1,2,3,4,5],[1,2]) , [1,3,2,4,5]);
+    Test.assertSimilar(shuffleIt([1,2,3,4,5],[1,2],[3,4]) , [1,3,2,5,4]);
+    Test.assertSimilar(shuffleIt([1,2,3,4,5],[1,2],[3,4],[2,3]) , [1,3,5,2,4]);
+
+  });
+});
+
+
+const shuffleIt = (arr,...index) => {
+  for (var i = 0; i < index.length; i++)
+  {
+    let [a,b] = [index[i][0], index[i][1]];
+    [arr[a], arr[b]] = [arr[b], arr[a]];
+  }
+  return arr;
+}
