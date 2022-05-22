@@ -974,3 +974,16 @@ function threeInOne(arr){
     }
     return resArr
 }
+
+// Training JS #26: methods of arrayObject---map()
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(isolateIt(["abcd","efgh"]) , ["ab|cd","ef|gh"]);
+    Test.assertSimilar(isolateIt(["abcde","fghij"]) , ["ab|de","fg|ij"]);
+    Test.assertSimilar(isolateIt(["1234","56789"]) , ["12|34","56|89"]);
+
+  });
+});
+
+
+const isolateIt = (arr) => arr.map(el => el.slice(0, Math.floor(el.length / 2)) + "|" + el.slice(-Math.floor(el.length / 2)))
