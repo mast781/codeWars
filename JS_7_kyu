@@ -987,3 +987,22 @@ describe("Tests", () => {
 
 
 const isolateIt = (arr) => arr.map(el => el.slice(0, Math.floor(el.length / 2)) + "|" + el.slice(-Math.floor(el.length / 2)))
+
+// Training JS #33: methods of Math---max() min() and abs()
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(maxMin([1,3,5],[9,8,7])               , [8,2]);
+    Test.assertSimilar(maxMin([1,10,100,1000],[0,0,0,0])     , [1000,1]);
+    Test.assertSimilar(maxMin([10,20,30,40],[111,11,1,-111]) , [151,9]);
+ 
+  });
+});
+
+
+function maxMin(arr1,arr2){
+    let resArr = []
+    for (let i = 0; i < arr1.length; i++) {
+        resArr.push(Math.abs(arr1[i] - arr2[i]))
+    }
+    return [Math.max(...resArr),Math.min(...resArr)]
+}
