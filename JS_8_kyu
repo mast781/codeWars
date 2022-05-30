@@ -2964,3 +2964,15 @@ function wrap(value) {
     value: value 
   };
 }
+
+// BASIC: Making Six Toast
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(sixToast(6), 0);
+Test.assertEquals(sixToast(17), 11);
+Test.assertEquals(sixToast(3), 3);
+  });
+});
+
+
+const sixToast = (num) => Math.abs(6 - num)
