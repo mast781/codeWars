@@ -2976,3 +2976,17 @@ Test.assertEquals(sixToast(3), 3);
 
 
 const sixToast = (num) => Math.abs(6 - num)
+
+// Beginner Series #2 Clock
+describe("Fixed Tests", () => {
+  it("Tests", () => {
+    Test.assertEquals(past(0,1,1),61000)
+    Test.assertEquals(past(1,1,1),3661000)
+    Test.assertEquals(past(0,0,0),0)
+    Test.assertEquals(past(1,0,1),3601000)
+    Test.assertEquals(past(1,0,0),3600000)
+  });
+});
+
+
+const past = (h, m, s) => (h * 3600 + m * 60 + s) * 1000
