@@ -3009,3 +3009,5 @@ describe("String.prototype.toAlternatingCase", () => {
 String.prototype.toAlternatingCase = function () {
   return this.split('').map(w => w === w.toUpperCase() ? w.toLowerCase() : w.toUpperCase()).join('')
 }
+
+// Is the string uppercase?
