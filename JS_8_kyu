@@ -3066,3 +3066,15 @@ describe("Basic tests",() =>{
 
 
 const getAge = (inputString) => +inputString.split('')[0] 
+
+// FIXME: Replace all dots
+describe("Example Tests", function() {
+
+  it("test dots", function(){
+    Test.assertEquals(replaceDots("one.two.three"), "one-two-three", "Sorry, try again :-(");
+  });
+  
+});
+
+
+const replaceDots = (str) => str.replace(/\./g, '-');
