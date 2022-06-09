@@ -3133,3 +3133,14 @@ function howManyDalmatians(number) {
   return respond
 
 }
+
+// Keep up the hoop
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(hoopCount(3),"Keep at it until you get it" ) 
+Test.assertEquals(hoopCount(11),"Great, now move on to tricks" )
+  });
+});
+
+
+const hoopCount = (n) => n < 10 ? "Keep at it until you get it" : "Great, now move on to tricks"
