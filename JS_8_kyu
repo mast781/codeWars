@@ -3144,3 +3144,21 @@ Test.assertEquals(hoopCount(11),"Great, now move on to tricks" )
 
 
 const hoopCount = (n) => n < 10 ? "Keep at it until you get it" : "Great, now move on to tricks"
+
+// Welcome to the City
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Sample Tests", () => {
+  it("Should pass Sample Tests", () => {
+    assert.strictEqual(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'), 'Hello, John Smith! Welcome to Phoenix, Arizona!')
+    assert.strictEqual(sayHello(['Franklin','Delano','Roosevelt'], 'Chicago', 'Illinois'), 'Hello, Franklin Delano Roosevelt! Welcome to Chicago, Illinois!')
+    assert.strictEqual(sayHello(['Wallace','Russel','Osbourne'],'Albany','New York'), 'Hello, Wallace Russel Osbourne! Welcome to Albany, New York!')
+  });
+});
+
+
+function sayHello( name, city, state ) {
+  return 'Hello, ' + name.join(' ') + '! Welcome to ' + city + ', ' + state + '!'
+}
